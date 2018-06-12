@@ -16,6 +16,11 @@ app.use(session({
   secret: process.env.SESSION_SECRET
 }));
 
+app.use(function(req, res, next) {
+    console.log("Here is high quality custom top level middleware!");
+    next()
+})
+
 app.get('/api/getUser', cont.getUser)
 
 app.put('/api/toDo', auth, cont.changeToDos)

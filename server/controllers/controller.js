@@ -17,7 +17,6 @@ module.exports = {
       } else res.sendStatus(404)
     },
     changeToDos: (req, res) => {
-        console.log("Inside!")
         listToDo[0] = req.query.newItem;
         req.session.user = {
           name: req.user,
